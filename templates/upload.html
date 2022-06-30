@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="static/css/style.css">
+        <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+        <title>
+            MODI Script Character Recognition
+        </title>
+    </head>
+    <body style="background-color:#66ffff">
+    <div id="container">
+        
+        <h1 id="hed" align="center" style="color:#f06c48">MODI Script Character Recognition</h1>
+        
+        <div id="content">
+        {% if msg %}
+        <h2 style="color:green" id="msg">{{msg}}</h2>
+        {% endif %}
+        
+        <div id="upload">
+        
+        <h2>Upload Your File!</h2>
+        
+            <form action="/prediction" method="post" enctype="multipart/form-data">
+            
+                <input type="file" name="file">
+                <input type="submit" name="upload" value="Upload">
+            
+            </form>
+            
+        
+        </div>
+        
+        
+        <div id="result">
+        
+            {% if answer %}
+            <h2>Results: </h2>
+            {% endif %}
+            
+            <!--<div class="uploaded-image" style="background-image: url('{{ user_image }}')">-->
+            
+            {% if user_image %}
+            
+            <img src="{{ url_for('send_file', filename=user_image) }}",id="up_img" width="150", height="150" style="margin:20px;">
+            
+            {% endif %}
+            
+            {% if answer %}
+            <p id="ext"><h3>{{ answer }}&nbsp;&nbsp;&nbsp; || &nbsp;&nbsp;&nbsp;{{ confidence }}</h3></p>
+            {% endif %}
+        </div>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static',filename='js/main.js') }}">
+    
+    </body>
+</html>
