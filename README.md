@@ -1,7 +1,7 @@
 # MODI-Script-Character-Recognition
 This repository contains the code and model for character recognition of Ancient MODI Script
 
-You can check the demo here :- https://modi-character-recognition.herokuapp.com/prediction
+You can check the demo here :- https://modi-character-recognition.herokuapp.com/
 
 Screenshot of demo :-
 
